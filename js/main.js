@@ -11,9 +11,9 @@ const $favorite = document.querySelector('.favorite');
 const render = key => {
   let html = '';
   const sortBy = key => {
-    const sortById = cardList.sort((card1, card2) => card1[key] < card2[key] ? 1 : (card1[key] > card2[key] ? -1 : 0))
-    const sortByElse = cardList.sort((card1, card2) => card1[key] > card2[key] ? 1 : (card1[key] < card2[key] ? -1 : 0))
-    key === 'id' ? sortById : sortByElse;
+    const sortById = cardList.sort((card1, card2) => (card1[key] < card2[key] ? 1 : (card1[key] > card2[key] ? -1 : 0)));
+    const sortByElse = cardList.sort((card1, card2) => (card1[key] > card2[key] ? 1 : (card1[key] < card2[key] ? -1 : 0)));
+    return key === 'id' ? sortById : sortByElse;
   };
 
   sortBy(key);
