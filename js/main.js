@@ -8,7 +8,7 @@ const $cardList = document.querySelector('.cardList');
 const $sortList = document.querySelector('.sortList');
 
 const $favList = document.querySelector('.favList');
-const $favTitle = document.getElementById('favTitle');
+const $favTitle = document.querySelector('.favTitle');
 
 const $newName = document.querySelector('.newName');
 const $newEmail = document.querySelector('.newEmail');
@@ -23,7 +23,6 @@ const checkMobile = /^\d{3}-\d{3,4}-\d{4}$/;
 const checkName = /../;
 
 const render = key => {
-
   let html = '';
   let favHtml = '';
   const isFav = [...cardList.filter(card => card.favorite), ...favCardList.filter(card => card.favorite)];
@@ -74,7 +73,7 @@ const render = key => {
         </li>`;
   });
 
-  if (!favCardList.length) $favTitle.remove();
+  $favTitle.style.display = favCardList.length ? 'block' : 'none';
 
   $cardList.innerHTML = html;
   $favList.innerHTML = favHtml;
@@ -84,7 +83,7 @@ const getCardList = () => {
   cardList = [{
     id: 1,
     name: '이하은',
-    company: '카카오 뱅크',
+    company: '카카오뱅크',
     division: '앱 개발팀',
     position: '대리',
     email: 'daidy@naver.com',
@@ -97,18 +96,17 @@ const getCardList = () => {
     name: '김우정',
     company: '토스',
     division: '인재 개발팀',
-    position: '선입',
+    position: '선임',
     email: 'tj123y@naver.com',
     mobile: '010-2344-3453',
     color: 'namecard color2',
     favorite: false,
-  },
-  ];
+  }];
 
   favCardList = [{
     id: 3,
     name: '송승은',
-    company: '쿠팡',
+    company: '라인',
     division: '경영지원팀',
     position: '과장',
     email: 'wj456@naver.com',
@@ -126,10 +124,8 @@ const getCardList = () => {
     mobile: '010-2355-2455',
     color: 'namecard color4',
     favorite: true,
-  },
-  ];
+  }];
   render();
-
 };
 
 const generateId = () => {
@@ -261,7 +257,7 @@ $favList.onclick = e => {
   const {
     id
   } = e.target.parentNode;
-  if (!e.target.matches('.favList > .namecard > i.deleteBtn')) return;
+  if (!e.target.matches('.favList > .namecard > img.deleteBtn')) return;
   favCardList = favCardList.filter(card => card.id !== +id);
   render();
 };

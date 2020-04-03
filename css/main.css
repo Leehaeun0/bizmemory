@@ -50,7 +50,7 @@ body *, body *::before, body *::after {
   background-color: #fff;
   float: left;
   padding: 25px 25px 75px 25px;
-  margin: 30px 20px;
+  margin: 30px 0 0 20px;
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.037);
   /* z-index: 99; */
   border-radius: 10px;
@@ -96,7 +96,7 @@ body *, body *::before, body *::after {
 .warnMsg {
   display: none;
   font-size: 10px;
-  padding: 0 10px;
+  padding: 5px 10px 0 10px;
   color: rgb(72, 91, 167);
 }
 
@@ -106,7 +106,7 @@ body *, body *::before, body *::after {
   min-height: 100%;
   background-color: #f4f4f4;
   float: right;
-  padding: 10px;
+  padding: 10px 10px 10px 0;
   position: relative;
 }
 
@@ -145,28 +145,34 @@ body *, body *::before, body *::after {
 }
 /* fav list */
 .favTitle {
-  margin: 10px;
+  margin: 10px 0;
+  max-width: 1020px;
   padding-bottom: 10px;
   text-align: center;
   border-bottom: 1px solid #ccc;
   color: #999;
+  margin: 0 auto;
 }
 .favList {
+  max-width: 1020px;
   width: 100%;
   padding: 10px 15px;
   margin-bottom: 15px;
+  margin: 0 auto;
 }
 /* card list */
 .cardList {
+  max-width: 1020px;
   width: 100%;
   clear: both;
   padding: 10px 15px;
   border-top: 1px solid #ccc;
+  margin: 0 auto;
 }
 .namecard {
   position: relative;
   padding: 20px;
-  width: 350px;
+  width: 330px;
   height: 180px;
   background-color: #d3d3d3;
   margin: 10px 10px 0 0;
@@ -319,4 +325,33 @@ body *, body *::before, body *::after {
   color: #fff;
   border: 0;
   padding: 10px;
+}
+
+/* ----- MOBILE DEVICE ----- */
+@media screen and (max-width: 559px) {
+  .newInfo {
+    width: calc(100% - 37px);
+    float: left;
+    padding: 25px 25px 75px 25px;
+    margin: 30px 20px;
+  }
+  .namecardList {
+    width: 100%;
+    min-height: 100%;
+    background-color: #f4f4f4;
+    float: right;
+    padding: 10px;
+    position: relative;
+  }
+  .sortWrapper {
+    float: right;
+    width: 100%;
+    margin: 0 0 20px 0;
+  }
+  .cardList, .favList {
+    padding: 10px 22px;
+  }
+  .cardList li, .favList li {
+    margin: 10px 0;
+  }
 }
