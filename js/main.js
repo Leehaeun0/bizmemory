@@ -187,6 +187,37 @@ $submitBtn.onclick = () => {
     return;
   }
 
+  // if (newValues.filter(value => value.length === 0).length !== 0) {
+  //   // alert('빈칸을 채워주세요!');
+  //   // console.log(newValues[0]);
+  //   $modal.style.display = 'block';
+
+  //   let warningMsg = '';
+
+  //   inputs.forEach((input, i, arr) => {
+
+  //     // const warningMsgs = ['이름', '회사', '부서', '직급', '이메일', '핸드폰 번호'];
+  //     const warningMsgs = ['핸드폰 번호', '이메일', '직급', '부서', '회사', '이름'];
+  //     // if (!input.value) {
+  //     //   if (warningMsgs[i] === input[i]) {
+  //     //     warningMsg = `${warningMsgs[i]}`;
+  //     //     // return;
+  //     //   }
+  //     // }
+  //     if (!input.value) warningMsg = warningMsgs[i] === inputs[i] ? 1 : `${warningMsgs[i]}`;
+  //     // if (!input.value) warningMsg = warningMsgs[i];
+  //     // if (!input.value) {
+  //     //   warningMsg = warningMsgs[i] === input[i] ? 1 : `${warningMsgs[i]}`;
+  //     //   return;
+  //     // }
+  //   });
+  //   $warningMsg.textContent = `${warningMsg}를 입력해 주세요`;
+  //   // });
+
+  //   return;
+  // }
+
+
   if (!checkName.test(newValues[0]) || !checkEmail.test(newValues[4]) || !checkMobile.test(newValues[5])) return;
   const [name, company, division, position, email, mobile] = newValues;
 
